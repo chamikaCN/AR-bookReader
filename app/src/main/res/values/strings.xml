@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AREbookReaderTest</string>
+    <string name="button_click">button clicked</string>
+    <string name="enter_word">Enter word</string>
+    <string name="pitch">Pitch</string>
+    <string name="pitchSpeed">Speed</string>
+    <string name="speak">Speak</string>
+    <string name="nothing_detected">Nothing Detected</string>
 </resources>
