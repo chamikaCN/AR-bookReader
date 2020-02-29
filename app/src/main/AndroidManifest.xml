@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chamikanandasiri.arebookreadertest">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".TextDetectionActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data android:name="com.google.ar.core" android:value="required"/>
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr"/>
     </application>
 
 </manifest>
