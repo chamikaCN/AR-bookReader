@@ -12,6 +12,11 @@
         android:id="@+id/fragment"
         android:name="com.google.ar.sceneform.ux.ArFragment"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
