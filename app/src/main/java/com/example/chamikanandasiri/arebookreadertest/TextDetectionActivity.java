@@ -31,7 +31,7 @@ public class TextDetectionActivity extends AppCompatActivity {
     String detectedString;
     EditText text;
     SeekBar speed,pitch;
-    Button speakButton;
+    Button speakButton,stopButton;
     TextToSpeech speech;
     SurfaceView cameraView;
     TextView detectedText;
@@ -64,6 +64,7 @@ public class TextDetectionActivity extends AppCompatActivity {
         speed = findViewById(R.id.speedBar);
         pitch = findViewById(R.id.pitchBar);
         speakButton = findViewById(R.id.speakButton);
+        stopButton = findViewById(R.id.stopButton);
         cameraView = findViewById(R.id.Surface);
         detectedText = findViewById(R.id.detectionLabel);
 
@@ -160,6 +161,13 @@ public class TextDetectionActivity extends AppCompatActivity {
                 speak();
             }
         });
+
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speech.stop();
+            }
+        });
     }
 
       void speak(){
@@ -170,7 +178,21 @@ public class TextDetectionActivity extends AppCompatActivity {
         if(pitchValue < 0.1) pitchValue = 0.1f;
         speech.setPitch(pitchValue);
         speech.setSpeechRate(speedValue);
-        speech.speak(detectedString,TextToSpeech.QUEUE_FLUSH,null);
+          if (detectedString != null) {
+              speech.speak(detectedString,TextToSpeech.QUEUE_FLUSH,null);
+          }else{
+              speech.speak(textValue,TextToSpeech.QUEUE_FLUSH,null);
+          }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        if(speech != null) {
+            speech.stop();
+            speech.shutdown();
+        }
+        super.onDestroy();
     }
 }
 
