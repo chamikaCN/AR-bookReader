@@ -4,6 +4,7 @@
     package="com.example.chamikanandasiri.arebookreadertest">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.camera.ar"
@@ -17,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TextDetectionActivity"/>
+        <activity android:name=".AnchorHostActivity"></activity>
+        <activity android:name=".CorousalActivity" />
+        <activity android:name=".ImageOverlayActivity" />
+        <activity android:name=".TextDetectionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,9 +33,12 @@
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
-
-        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
-            android:value="ocr"/>
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+        <meta-data
+            android:name="com.google.android.ar.API_KEY"
+            android:value="AIzaSyAIuEEpdaPxAq5BLQkF2umnq51FDEtDnzU" />
     </application>
 
 </manifest>
