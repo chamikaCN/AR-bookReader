@@ -6,4 +6,10 @@
     <string name="pitchSpeed">Speed</string>
     <string name="speak">Speak</string>
     <string name="nothing_detected">Nothing Detected</string>
+    <string name="stop">Stop</string>
+    <string name="text_recognizer">Text Recognizer</string>
+    <string name="image_overlay">Image Overlay</string>
+    <string name="corousal">Corousal</string>
+    <string name="anchor_host">Anchor Host</string>
+    <string name="retrieve">Retrieve</string>
 </resources>
